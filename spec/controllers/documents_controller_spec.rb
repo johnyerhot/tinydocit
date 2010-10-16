@@ -40,12 +40,26 @@ describe DocumentsController do
     
     it "should retrieve document by key" do
       Document.should_receive(:find_by_key).with('foo').and_return( Factory.stub(:document) )
-      get :show, :key => 'foo'
+      get :show, :id => 'foo'
     end
     
     it "should render show page" do
-      get :show, :key => 'foo'
+      get :show, :id => 'foo'
       response.should render_template('show')      
+    end
+    
+  end
+  
+  describe "#view" do
+    
+    it "should retrieve document by key" do
+      Document.should_receive(:find_by_key).with('foo').and_return( Factory.stub(:document) )
+      get :view, :key => 'foo'
+    end
+    
+    it "should render show page" do
+      get :view, :key => 'foo'
+      response.should render_template('view')      
     end
     
   end

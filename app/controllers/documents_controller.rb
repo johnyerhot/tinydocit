@@ -14,6 +14,10 @@ class DocumentsController < ApplicationController
   def show
     @document = Document.find_by_key( params[:id] )
   end
+
+  def view
+    @document = Document.find_by_key( params[:key] )
+  end
   
   def download
     @document = Document.find_by_key( params[:key] )
