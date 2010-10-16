@@ -23,4 +23,6 @@ class Document < ActiveRecord::Base
   def generate_key
     ActiveSupport::SecureRandom.hex(12)[0..5]
   end
+
+  
 end

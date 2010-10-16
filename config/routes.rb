@@ -2,7 +2,7 @@ Tinyurl::Application.routes.draw do
     
   resources :documents 
 
-  match "download/:key" => "documents#download"
+  match "download/:key" => "documents#download", :as => :download
   match "/:key" => "documents#show"
   root :to => "documents#new"
 

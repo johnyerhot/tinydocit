@@ -20,12 +20,21 @@ describe PDF do
       @pdf.folder.should == '/foo/bar'
     end
      
-  end
-  
-  describe "#splice" do
-    
+     
   end
 
+  describe "#filename_without_extension" do
+    it "should return filename without extension" do
+      @pdf = PDF.new( '/foo/bar/test.pdf')
+      @pdf.filename_without_extension.should == 'test'      
+    end
+  end
+
+  
+  describe "#splice" do
+    # shell execs a command
+    # TODO: Figure out how to test
+  end
 
   describe "#image" do
     

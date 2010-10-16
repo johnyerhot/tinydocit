@@ -9,11 +9,10 @@ class DocumentsController < ApplicationController
     if @document.save
       redirect_to document_path(@document.key)
     end
-    
   end
   
   def show
-    @document = Document.find_by_key( params[:key] )
+    @document = Document.find_by_key( params[:id] )
   end
   
   def download
