@@ -39,6 +39,12 @@ form{
     background-color: #e6edff;
 }
 
+p.quiet{
+    margin-top: 10px;
+    font-size: 0.7em;
+    color: #777;
+}
+
 /* footer */
 
 div#awesome{

@@ -1,10 +1,11 @@
 <div id="content">
   <div id="about">
     <h1>TinyDoc</h1>
-    <p>PDF in. Browseable web page out.</p>
+    <p>PDF in - browseable and shareable web page out.</p>
   </div>
   <%= form_for @document, :html => { :multipart => true } do |f| %>
   <%= f.file_field :pdf %> 
   <%= f.submit("Tinyerize") %>
+  <p class="quiet">PDFs only.  2MB max. Don't give us Copyrighted shit.</p>
 <% end %>
 </div>
