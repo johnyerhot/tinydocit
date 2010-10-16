@@ -43,6 +43,6 @@ production:
   reconnect: false
   database: tinyurl_production
   pool: 5
-  username: root
-  password:
+  username: rails
+  password: rails2010
   socket: /var/run/mysqld/mysqld.sock
