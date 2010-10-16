@@ -31,7 +31,7 @@ describe DocumentsController do
     it "should redirect to #show" do
       @document.stub(:save).and_return(true)
       post :create, :document => "hi"
-      response.should redirect_to(document_path(@document))
+      response.should redirect_to(document_path(@document.key))
     end
     
   end
@@ -40,11 +40,11 @@ describe DocumentsController do
     
     it "should retrieve document by key" do
       Document.should_receive(:find_by_key).with('foo').and_return( Factory.stub(:document) )
-      get :show, :id => 'foo'
+      get :show, :key => 'foo'
     end
     
     it "should render show page" do
-      get :show, :id => 'foo'
+      get :show, :key => 'foo'
       response.should render_template('show')      
     end
     

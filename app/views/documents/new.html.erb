@@ -1,1 +1,5 @@
-"hi"
+<%= form_for @document, :html => { :multipart => true } do |f| %>
+<%= f.label :upfuckingload %>  <br />
+<%= f.file_field :pdf %> 
+<%= f.submit %>
+<% end %>

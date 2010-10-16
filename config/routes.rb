@@ -1,4 +1,11 @@
 Tinyurl::Application.routes.draw do
+    
+  resources :documents 
+
+  match "download/:key" => "documents#download"
+  match "/:key" => "documents#show"
+  root :to => "documents#new"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
