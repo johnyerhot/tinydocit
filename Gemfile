@@ -1,11 +1,17 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0.rc'
-
+gem 'rails', '3.0.1'
+gem 'paperclip'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql'
+
+group :development, :test do
+  gem "rspec", "2.0.0", :git => "http://github.com/rspec/rspec.git"
+  gem "rspec-rails"
+end
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
