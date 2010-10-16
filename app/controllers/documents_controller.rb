@@ -8,6 +8,8 @@ class DocumentsController < ApplicationController
     @document = Document.new(params[:document])
     if @document.save
       redirect_to document_path(@document.key)
+    else
+      render :new
     end
   end
   

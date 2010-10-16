@@ -4,6 +4,16 @@
     <p>PDF in - browseable and shareable web page out.</p>
   </div>
   <%= form_for @document, :html => { :multipart => true } do |f| %>
+  <% if @document.errors.any? %>  
+    <div id="errorExplanation">  
+      <h2><%= pluralize(@document.errors.count, "error") %>.  </h2>  
+      <ul>  
+        <% @document.errors.each do |msg| %>  
+          <li><%= msg[1] %></li>  
+        <% end %>  
+      </ul>  
+    </div>  
+  <% end %>  
   <%= f.file_field :pdf %> 
   <%= f.submit("Tinyerize") %>
   <p class="quiet">PDFs only.  2MB max. Please nothing copyrighted.</p>
