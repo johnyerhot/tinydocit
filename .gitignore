@@ -3,3 +3,5 @@ db/*.sqlite3
 log/*.log
 tmp/**/*
 public/system
+doc_data.txt
+.DS_Store

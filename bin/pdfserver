@@ -1,0 +1,33 @@
+#!/usr/bin/env ruby
+$:.unshift File.join( File.dirname(__FILE__), '..', 'lib' )
+
+require 'rubygems'
+require 'optparse'
+require 'pdf'
+
+begin
+  
+  options = {:daemonize => false}
+  
+  opts = OptionParser.new do |opts|
+    opts.banner = <<-EOF
+  Usage:
+    Starting:
+      pdfserver [-D]
+
+  EOF
+  
+  
+    opts.on("-D", "-daemonize", "daemonize") do
+      options[:daemonize] = true
+    end
+    
+  end
+  
+  require 'pdf/cli/execute'
+  PDF::CLI::Execute.new(options)
+rescue Exception => e
+  puts e
+end
+
+exit(0) # It's all good!
