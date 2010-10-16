@@ -1,5 +1,14 @@
 set :application, "tinydoc"
-set :repository,  "git@github.com:railsrumble/rr10-team-265.git"
+set :repository,  "https://johnyerhot@github.com/johnyerhot/rr10-team-265.git"
+set :user, "root"
+set :scm_username, "johnyerhot"
+set :runner, user
+set :branch, "master"
+
+default_run_options[:pty] = true
+
+set :deploy_to, "/apps/#{application}"
+set :repository_cache, :remote_cache
 
 set :scm, :git
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
