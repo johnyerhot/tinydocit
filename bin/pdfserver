@@ -15,14 +15,16 @@ begin
     Starting:
       pdfserver [-D]
 
+    Options:
   EOF
-  
-  
-    opts.on("-D", "-daemonize", "daemonize") do
+    
+    opts.on("-D", "--daemonize", "daemonize") do
       options[:daemonize] = true
     end
     
   end
+  
+  opts.parse!
   
   require 'pdf/cli/execute'
   PDF::CLI::Execute.new(options)

@@ -8,10 +8,10 @@ module PDF
       end 
 
       def start
-        if @options[:daemonize] == false
-          PDF.start
-        else
+        if @options[:daemonize] == true
           start_daemonized
+        else
+          PDF.start
         end
       end
 
