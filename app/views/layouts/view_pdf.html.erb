@@ -3,10 +3,11 @@
   <head>
     <title>TinyDoc</title>
     <%= stylesheet_link_tag :all %>
+    <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js" %>
     <%= csrf_meta_tag %>
   </head>
   <body>
-    <div id="container">
+    <div id="view_container">
       <%= yield %>
       <%= render :partial => "elements/footer" %>
     </div>

@@ -15,6 +15,15 @@ html{
     width:100%;
 }
 
+a {
+    color: #4b65a6;
+}
+
+a.light {
+    color: #F1F5FF;
+    font-weight: bold;
+}
+
 h1 {
     letter-spacing: -2px;
     font-size: 300%;
@@ -63,10 +72,33 @@ div#awesome{
 }
 
 div#awesome a{
-    color: #4b65a6;
     text-decoration: none;
 }
 div#awesome a:hover{
 
     text-decoration: underline;
+}
+
+/* pdf viewer */
+div#view_container{
+    margin: 0 auto;
+    width: 602px;
+}
+
+div#view_pdf{
+    border-right: 2px solid #888;
+    border-bottom: 2px solid #888;
+    width: 600px;
+    background-color: #fff;
+}
+div#controls-left{
+
+}
+div#controls-right{
+    float: right;
+}
+div.controls{
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #E6EDFF;
 }
