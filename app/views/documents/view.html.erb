@@ -2,6 +2,7 @@
 <script type="text/javascript">
   <!--
      var identifier = <%= @document.id %>;
+     var maximus    = <%= @pages.length %>;
     -->
 </script>
 <% end -%>
@@ -9,15 +10,9 @@
   <div id="header">
     <p>Get your own <%= link_to "TinyDoc", root_url, :class => "light" %></p>
   </div>
-  <div id="view_pdf">
-    <%= tag("img", :src => "/system/pdfs/#{@document.id}/1_page.jpg", :id => "page") %>
-  </div>
-  <p class="quiet">You can download the <%= link_to 'original', download_path(@document.key), :class => "small" %> too.</p>
-  <div id="controls-right" class="controls">
-    <%= link_to "Next Page", "#", :id => "next-link" %>    
-  </div>
-  <div id="controls-left" class="controls">
-    <%= link_to "Previous Page", "#", :id => "previous-link" %>
-  </div>
-
+<% unless @pages.empty? -%>
+  <%= render :partial => "view_pdf" %>
+<% else -%>
+  <%= render :partial => "still_processing" %>
+<% end -%>
 </div>

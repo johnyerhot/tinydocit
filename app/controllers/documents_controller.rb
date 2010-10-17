@@ -19,6 +19,7 @@ class DocumentsController < ApplicationController
 
   def view
     @document = Document.find_by_key( params[:key] )
+    @pages = @document.fetch_jpg_paths
     render :layout => "view_pdf"
   end
   

@@ -4,9 +4,10 @@ $(document).ready(function(){
 
   var page = 1;
   $("#next-link").click(function(){
-    page += 1;
-    $("#page").attr("src", "/system/pdfs/" + identifier + "/" + page + "_page.jpg");
-
+    if(page != maximus){
+      page += 1;
+      $("#page").attr("src", "/system/pdfs/" + identifier + "/" + page + "_page.jpg");
+    }
     return false;
   });
 

@@ -4,7 +4,8 @@
     <h2>Cool.  Give this out and people can view your PDF.</h2>
   </div>
   <div class="linky">
-    <p><%= link_to "http://#{HOST}/#{@document.key}", "http://#{HOST}/#{@document.key}" %></p>
+    <p><%= link_to "http://tinydoc.it/#{@document.key}", "http://tinydoc.it/#{@document.key}" %></p>
+    <p class="quiet">Or for Rails Rumblers, <%= link_to "http://#{HOST}/#{@document.key}", "http://#{HOST}/#{@document.key}", :class => "small" %></p>
   <p class="quiet">You can always get the  <%= link_to 'original', download_path(@document.key), :class => "small" %> too.</p>
   </div>
 
