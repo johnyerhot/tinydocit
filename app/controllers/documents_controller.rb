@@ -31,7 +31,7 @@ class DocumentsController < ApplicationController
   
   def download
     @document = Document.find_by_key( params[:key] )
-    send_file(@document.pdf.path)
+    send_file(@document.pdf.path, :type => @document.pdf.content_type)
   end
 
 end

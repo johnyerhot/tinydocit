@@ -1,7 +1,7 @@
 class Document < ActiveRecord::Base
   
   has_attached_file :pdf,
-  :path => ':rails_root/public/system/pdfs/:id/:id.:extension'
+  :path => ':rails_root/public/system/pdfs/:id/:id_original.:extension'
   
   before_create :set_key
   before_create :check_key
