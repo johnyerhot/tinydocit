@@ -6,7 +6,7 @@ $(document).ready(function(){
   $("#next-link").click(function(){
     if(page != maximus){
       page += 1;
-      $("#page").attr("src", "/system/pdfs/" + identifier + "/" + page + "_page.jpg");
+      swap_image();     
     }
     return false;
   });
@@ -14,9 +14,13 @@ $(document).ready(function(){
   $("#previous-link").click(function(){
     if(page != 1){
       page -= 1;
-      $("#page").attr("src", "/system/pdfs/" + identifier + "/" + page + "_page.jpg");
+      swap_image();
     };
     return false;
   });
 
+  function swap_image(){
+   $("#page").attr("src", "/system/pdfs/" + identifier + "/" + page + "_page.jpg");
+  }
 });
+

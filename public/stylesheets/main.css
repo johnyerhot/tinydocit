@@ -29,6 +29,9 @@ h1 {
     font-size: 300%;
     color: #fff;
 }
+.grey{
+    color: #B1B5BF;
+}
 div#container{
     margin: 0 auto;
     width: 500px;
