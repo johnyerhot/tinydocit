@@ -1,6 +1,6 @@
 <div id="content">
   <div id="header">
-    <h1>TinyDoc</h1>
+    <h1>TinyDoc<span class="grey">.</span>it</h1>
     <p>PDF in - browseable and shareable web page out.</p>
   </div>
   <%= form_for @document, :html => { :multipart => true } do |f| %>
@@ -15,7 +15,7 @@
     </div>  
   <% end %>  
   <%= f.file_field :pdf %> 
-  <%= f.submit("Tinyerize") %>
-  <p class="quiet">PDFs only.  2MB max. Please nothing copyrighted.</p>
+  <%= f.submit("TinyDoc it") %>
+  <p class="quiet">PDFs only (right now).  2MB max. Please nothing copyrighted.</p>
 <% end %>
 </div>
