@@ -1,16 +1,23 @@
+<% content_for(:javascript) do -%>
+<script type="text/javascript">
+  <!--
+     var identifier = <%= @document.id %>;
+    -->
+</script>
+<% end -%>
 <div id="content">
   <div id="header">
     <p>Get your own <%= link_to "TinyDoc", root_url, :class => "light" %></p>
   </div>
   <div id="view_pdf">
-    image goes here yo
+    <%= tag("img", :src => "/system/pdfs/#{@document.id}/1_page.jpg", :id => "page") %>
   </div>
 
   <div id="controls-right" class="controls">
-    <%= link_to "Next Page", "#" %>    
+    <%= link_to "Next Page", "#", :id => "next-link" %>    
   </div>
   <div id="controls-left" class="controls">
-    <%= link_to "Previous Page", "#" %>
+    <%= link_to "Previous Page", "#", :id => "previous-link" %>
   </div>
 
 </div>

@@ -14,7 +14,7 @@ module PDF
 
     def splice
       begin
-        `pdftk #{self.filepath} burst output #{self.folder}/%02d_page.pdf`
+        `pdftk #{self.filepath} burst output #{self.folder}/%01d_page.pdf`
         true
       rescue
         false

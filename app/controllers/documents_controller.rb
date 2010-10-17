@@ -20,12 +20,11 @@ class DocumentsController < ApplicationController
   def view
     @document = Document.find_by_key( params[:key] )
     render :layout => "view_pdf"
-
   end
   
   def download
     @document = Document.find_by_key( params[:key] )
     send_file(@document.pdf.path)
   end
-  
+
 end
