@@ -19,4 +19,22 @@ describe Document do
     
   end
 
+  describe "log_viewing" do
+
+    before do
+      @document = Factory(:document, :views => 2)
+    end
+
+    it "should increment the view count" do
+      @document.log_viewing
+      @document.views.should == 3
+    end
+    
+    it "should update the last_viewed_at" do
+      time = Time.now
+      Time.stub(:now).and_return(time)
+      @document.log_viewing
+      @document.last_viewed_at.should == time
+    end
+  end
 end

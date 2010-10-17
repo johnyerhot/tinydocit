@@ -34,4 +34,9 @@ class Document < ActiveRecord::Base
     @pages = Dir.glob(path)
   end
 
+  def log_viewing
+    # don't use increment, do it in one update
+    update_attributes(:last_viewed_at => Time.now, :views => self.views += 1)
+  end
+  
 end

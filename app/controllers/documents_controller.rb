@@ -20,6 +20,8 @@ class DocumentsController < ApplicationController
   def view
     @document = Document.find_by_key( params[:key] )
     @pages = @document.fetch_jpg_paths
+    @document.log_viewing unless @pages.empty?
+
     render :layout => "view_pdf"
   end
   

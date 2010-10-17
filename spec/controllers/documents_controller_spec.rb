@@ -51,17 +51,37 @@ describe DocumentsController do
   end
   
   describe "#view" do
+    before do
+      @document = Factory.stub(:document) 
+      @paths = ["/hi", "/there"]
+      @document.stub(:fetch_jpg_paths).and_return(@paths)
+      @document.stub(:log_viewing).and_return(true)
+      Document.stub(:find_by_key).and_return(@document)
+    end
+
+    def do_get
+      get :view, :key => 'foo'
+    end
     
     it "should retrieve document by key" do
-      Document.should_receive(:find_by_key).with('foo').and_return( Factory.stub(:document) )
-      get :view, :key => 'foo'
+      Document.should_receive(:find_by_key).with('foo').and_return(@document)
+      do_get
     end
     
     it "should render show page" do
-      get :view, :key => 'foo'
+      do_get
       response.should render_template('view')      
     end
     
+    it "should log the viewing" do
+      @document.should_receive(:log_viewing)
+      do_get
+    end
+
+    it "should find jpg page paths" do
+      do_get
+      assigns[:pages].should == @paths
+    end
   end
   
   
