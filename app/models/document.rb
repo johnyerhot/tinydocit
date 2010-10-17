@@ -3,8 +3,8 @@ class Document < ActiveRecord::Base
   has_attached_file :pdf,
   :path => ':rails_root/public/system/pdfs/:id/:id.:extension'
   
-  before_save :set_key
-  before_save :check_key
+  before_create :set_key
+  before_create :check_key
   
   validates_attachment_size :pdf, 
   :less_than => 3.megabyte, 
