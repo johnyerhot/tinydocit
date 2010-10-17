@@ -1,5 +1,5 @@
 set :application, "tinydoc"
-set :repository,  "https://johnyerhot@github.com/johnyerhot/rr10-team-265.git"
+set :repository,  "https://johnyerhot@github.com/railsrumble/rr10-team-265.git"
 set :user, "deploy"
 set :scm_username, "johnyerhot"
 set :runner, user

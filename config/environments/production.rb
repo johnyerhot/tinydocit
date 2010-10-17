@@ -47,3 +47,4 @@ Tinyurl::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 end
+HOST = "tinydoc.r10.railsrumble.com"
