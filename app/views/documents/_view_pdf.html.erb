@@ -1,5 +1,5 @@
   <div id="view_pdf">
-    <%= tag("img", :src => "/system/pdfs/#{@document.id}/1_page.jpg", :id => "page") %>
+    <%= tag("img", :src => "/pdfs/#{@document.id}/1_page.jpg", :id => "page") %>
   </div>
   <p class="quiet">You can download the <%= link_to 'original', download_path(@document.key), :class => "small" %> too.  This has been viewed <%= pluralize(@document.views, "time") %>.</p>
   <div id="controls-right" class="controls">

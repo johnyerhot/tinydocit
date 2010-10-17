@@ -20,7 +20,7 @@ $(document).ready(function(){
   });
 
   function swap_image(){
-   $("#page").attr("src", "/system/pdfs/" + identifier + "/" + page + "_page.jpg");
+   $("#page").attr("src", "/pdfs/" + identifier + "/" + page + "_page.jpg");
   }
 });
 
