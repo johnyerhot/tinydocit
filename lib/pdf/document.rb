@@ -25,7 +25,7 @@ module PDF
       puts "Imaging #{self.filepath}"
       begin
         pages = File.join( self.folder , "*_page.pdf" )
-        Dir.glob( pages ).each do |page|
+        Dir.glob( pages ).sort.each do |page|
           puts "Converting #{page} to image"
             `convert -density 96 -quality 90 -resize 600x -quiet #{page} #{page.gsub(/\.pdf/, '.jpg')} > /dev/null`
           end
