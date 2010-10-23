@@ -22,7 +22,9 @@ development:
   pool: 5
   username: root
   password: 
-  socket: /tmp/mysql.sock
+  socket: /var/run/mysqld/mysqld.sock
+
+#  socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -35,7 +37,8 @@ test:
   pool: 5
   username: root
   password:
-  socket: /tmp/mysql.sock
+  socket: /var/run/mysqld/mysqld.sock
+#  socket: /tmp/mysql.sock
 
 production:
   adapter: mysql
@@ -43,6 +46,6 @@ production:
   reconnect: false
   database: tinyurl_production
   pool: 5
-  username: rails
-  password: rails2010
+  username: root
+  password: try$tm3733t
   socket: /var/run/mysqld/mysqld.sock
