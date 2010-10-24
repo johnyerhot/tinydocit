@@ -8,7 +8,7 @@ class Document < ActiveRecord::Base
   
   validates_attachment_size :pdf, 
   :less_than => 10.megabyte, 
-  :message => "Sorry, we've only got one tiny server and anything over 2MB makes it want to crawl over and die.  Vote for our app and we might be a bigger server and then maybe up the size limit. Until then, 2MB only."
+  :message => "Documents cannot be larger than 10MB"
   
   validates_attachment_content_type :pdf, :content_type=>['application/pdf', 'application/octet-stream'], :message => "Sorry, PDF only buddy."
 
@@ -44,6 +44,8 @@ class Document < ActiveRecord::Base
         update_attributes(:conversion_completed => true, 
                           :number_of_pages => (pages.length - 1))
         reload
+      else
+        return false
       end
     end
     true
