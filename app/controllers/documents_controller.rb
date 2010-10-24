@@ -30,7 +30,7 @@ class DocumentsController < ApplicationController
   def download
     @document = Document.find_by_key( params[:key] )
     # for nginx 
-    head(:x_accel_redirect => "/pdfs/#{@document.id}/#{@document.id}_original.pdf", :content_type => @document.pdf.content_type)
+    head(:x_accel_redirect => "/pdfs/#{@document.key}/#{@document.id}_original.pdf", :content_type => @document.pdf.content_type)
 
 #    send_file(@document.pdf.path, :type => @document.pdf.content_type)
   end
