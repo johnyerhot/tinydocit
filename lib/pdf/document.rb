@@ -1,3 +1,5 @@
+require 'fileutils'
+
 module PDF
   class Document
    
@@ -22,13 +24,15 @@ module PDF
     end
 
     def image
-      #puts "Imaging #{self.filepath}"
+      puts "Imaging #{self.filepath}"
       begin
         pages = File.join( self.folder , "*_page.pdf" )
         Dir.glob( pages ).sort.each do |page|
-          #puts "Converting #{page} to image"
+          puts "Converting #{page} to image"
             `convert -density 96 -quality 90 -resize 600x -quiet #{page} #{page.gsub(/\.pdf/, '.jpg')} > /dev/null`
           end
+        puts "touching finshed file at #{self.folder}"
+        FileUtils.touch "#{self.folder}/finished.txt"
       rescue
         false
       end

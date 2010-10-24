@@ -20,9 +20,7 @@ class DocumentsController < ApplicationController
   def view
     @document = Document.find_by_key( params[:key] )
     if @document
-      @pages = @document.fetch_jpg_paths
-      @document.log_viewing unless @pages.empty?
-
+      @document.log_viewing if @document.completed?
       render :layout => "view_pdf"
     else
       render :status => 404, :file => "public/404.html", :layout => false

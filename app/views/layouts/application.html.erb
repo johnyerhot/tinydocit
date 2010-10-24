@@ -2,8 +2,7 @@
 <html>
   <head>
     <title>TinyDoc - Easily Browse and Share PDFs</title>
-    <%= stylesheet_link_tag :all %>
-    <%= csrf_meta_tag %>
+    <%= render :partial => "elements/head" %>
   </head>
   <body>
     <div id="container">
@@ -11,9 +10,4 @@
       <%= render :partial => "elements/footer" %>
     </div>
   </body>
-  <script type="text/javascript">
-    var rumbleUrl = 'http://railsrumble.com';
-  </script>
-  <script type="text/javascript" src="http://blog.railsrumble.com/javascripts/rumble-r10-sash.js"></script>
-
 </html>

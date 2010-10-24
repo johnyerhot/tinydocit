@@ -1,8 +1,8 @@
 <% content_for(:javascript) do -%>
 <script type="text/javascript">
   <!--
-     var identifier = <%= @document.id %>;
-     var maximus    = <%= @pages.length %>;
+     var identifier = "<%= @document.key %>";
+     var maximus    = <%= @document.number_of_pages %>;
     -->
 </script>
 <% end -%>
@@ -10,7 +10,7 @@
   <div id="header">
     <p>Get your own <%= link_to "TinyDoc", root_url, :class => "light" %></p>
   </div>
-<% unless @pages.empty? -%>
+<% if @document.completed? -%>
   <%= render :partial => "view_pdf" %>
 <% else -%>
   <%= render :partial => "still_processing" %>
