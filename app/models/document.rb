@@ -42,7 +42,7 @@ class Document < ActiveRecord::Base
         path = "#{Rails.root.to_s}/public/system/pdfs/#{self.key}/*_page.jpg"
         pages ||= Dir.glob(path)
         update_attributes(:conversion_completed => true, 
-                          :number_of_pages => (pages.length - 1))
+                          :number_of_pages => (pages.length))
         reload
       else
         return false
