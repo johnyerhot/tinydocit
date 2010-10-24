@@ -5,7 +5,7 @@ module PDF
       beanstalk = Beanstalk::Pool.new(['localhost:11300'])
       loop do
         job = beanstalk.reserve
-        puts "Splicing PDF #{job.body}"
+#        puts "Splicing PDF #{job.body}"
         process( job.body )
         job.delete
       end  
