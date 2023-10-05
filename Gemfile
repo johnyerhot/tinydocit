@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.1'
+gem 'rails', '7.1.0'
 gem 'paperclip'
 gem 'capistrano'
 gem 'beanstalk-client'
@@ -14,7 +14,7 @@ group :development, :test do
   gem "rspec", "2.0.0", :git => "http://github.com/rspec/rspec.git"
   gem "rspec-rails"
   gem "ZenTest"
-  gem "factory_girl_rails"
+  gem "factory_girl_rails", ">= 1.0.1"
 end
 
 
