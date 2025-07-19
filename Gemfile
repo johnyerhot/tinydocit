@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.1'
-gem 'paperclip'
+gem 'rails', '7.1.0'
+gem 'paperclip', '>= 2.3.5'
 gem 'capistrano'
 gem 'beanstalk-client'
 
